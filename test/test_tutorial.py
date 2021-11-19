@@ -1,5 +1,5 @@
 import unittest
-from app.tutorial import Tutorial
+from src.tutorial import Tutorial
 
 class TestTutorial(unittest.TestCase):
     def test_fizzbuzz(self):
