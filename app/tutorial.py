@@ -1,5 +1,6 @@
 class Tutorial:
-    def fizzbuzz(value: int):
+    @classmethod
+    def fizzbuzz(cls, value: int):
         if value % 15 == 0:
             return 'FizzBuzz'
         if value % 5 == 0:
