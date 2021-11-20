@@ -11,7 +11,7 @@ class TestTutorial(unittest.TestCase):
             self.assertEqual(Tutorial.fizzbuzz(num), 'Fizz', 'Fizzを返すべき')
 
     def test_fizzbuzz_multiple_five(self):
-        for num in [5, 10, 15, 20]:
+        for num in [5, 10, 20, 25]:
             self.assertEqual(Tutorial.fizzbuzz(num), 'Buzz', 'Buzzを返すべき')
 
     def test_fizzbuzz_multiple_fifteen(self):
