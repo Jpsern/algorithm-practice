@@ -2,6 +2,9 @@ name: Test CI
 
 on:
   push:
+  pull_request:
+    types:
+      - closed
   workflow_dispatch:
 
 jobs:
@@ -13,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: '3.9.7'
 
       - name: Print Python version
         run: python --version
