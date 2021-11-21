@@ -12,6 +12,7 @@ class Tutorial:
         else:
             return value
 
+    @classmethod
     def is_prime_number(cls, num: int):
         if num <= 1:
             return False
