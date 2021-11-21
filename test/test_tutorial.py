@@ -17,3 +17,8 @@ class TestTutorial(unittest.TestCase):
     def test_fizzbuzz_multiple_fifteen(self):
         for num in [15, 30, 45, 60]:
             self.assertEqual(Tutorial.fizzbuzz(num), 'FizzBuzz', 'FizzBuzzを返すべき')
+    
+    def test_is_prime_number(self):
+        # とりあえず適当
+        self.assertTrue(Tutorial.is_prime_number(7))
+        self.assertFalse(Tutorial.is_prime_number(8))
