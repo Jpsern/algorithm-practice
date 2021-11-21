@@ -19,6 +19,10 @@ class TestTutorial(unittest.TestCase):
             self.assertEqual(Tutorial.fizzbuzz(num), 'FizzBuzz', 'FizzBuzzを返すべき')
     
     def test_is_prime_number(self):
-        # とりあえず適当
-        self.assertTrue(Tutorial.is_prime_number(7))
-        self.assertFalse(Tutorial.is_prime_number(8))
+        self.assertListEqual(
+            list(filter(
+                lambda x: Tutorial.is_prime_number(x), range(1, 20)
+            )),
+            [2, 3, 5, 7, 11, 13, 17, 19],
+            '素数だけが配列に格納される'
+        )
