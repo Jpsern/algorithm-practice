@@ -16,8 +16,7 @@ class Tutorial:
     def is_prime_number(cls, num: int):
         if num <= 1:
             return False
-        for i in range(2, math.ceil(math.sqrt(num))):
+        for i in range(2, int(math.sqrt(num)) +1):
             if num % i == 0:
                 return False
         return True
-
