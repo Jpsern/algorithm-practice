@@ -17,3 +17,12 @@ class TestTutorial(unittest.TestCase):
     def test_fizzbuzz_multiple_fifteen(self):
         for num in [15, 30, 45, 60]:
             self.assertEqual(Tutorial.fizzbuzz(num), 'FizzBuzz', 'FizzBuzzを返すべき')
+    
+    def test_is_prime_number(self):
+        self.assertListEqual(
+            list(filter(
+                lambda x: Tutorial.is_prime_number(x), range(1, 20)
+            )),
+            [2, 3, 5, 7, 11, 13, 17, 19],
+            '素数だけが配列に格納される'
+        )
