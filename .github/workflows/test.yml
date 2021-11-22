@@ -18,5 +18,11 @@ jobs:
       - name: Print Python version
         run: python --version
 
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Install pytest plugin
+        run: pip install pytest-cov
+
       - name: Run test
-        run: python -m unittest
+        run: pytest -v --cov=src
