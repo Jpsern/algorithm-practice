@@ -7,7 +7,7 @@ class TestTutorial(unittest.TestCase):
             self.assertEqual(Tutorial.fizzbuzz(num), num, '渡した値をそのまま返す')
 
     def test_fizzbuzz_multiple_three(self):
-        for num in [3, 6, 9, 12, 13]:
+        for num in [3, 6, 9, 12]:
             self.assertEqual(Tutorial.fizzbuzz(num), 'Fizz', 'Fizzを返すべき')
 
     def test_fizzbuzz_multiple_five(self):
@@ -23,6 +23,6 @@ class TestTutorial(unittest.TestCase):
             list(filter(
                 lambda x: Tutorial.is_prime_number(x), range(1, 20)
             )),
-            [2, 3, 5, 7, 11, 13, 17, 19],
+            [2, 3, 4, 5, 7, 9, 11, 13, 17, 19],
             '素数だけが配列に格納される'
         )
