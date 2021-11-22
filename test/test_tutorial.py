@@ -23,6 +23,6 @@ class TestTutorial(unittest.TestCase):
             list(filter(
                 lambda x: Tutorial.is_prime_number(x), range(1, 20)
             )),
-            [2, 3, 4, 5, 7, 9, 11, 13, 17, 19],
+            [2, 3, 5, 7, 11, 13, 17, 19],
             '素数だけが配列に格納される'
         )
