@@ -7,7 +7,7 @@ class TestTutorial(unittest.TestCase):
             self.assertEqual(Tutorial.fizzbuzz(num), num, '渡した値をそのまま返す')
 
     def test_fizzbuzz_multiple_three(self):
-        for num in [3, 6, 9, 12]:
+        for num in [3, 6, 9, 12, 13]:
             self.assertEqual(Tutorial.fizzbuzz(num), 'Fizz', 'Fizzを返すべき')
 
     def test_fizzbuzz_multiple_five(self):
