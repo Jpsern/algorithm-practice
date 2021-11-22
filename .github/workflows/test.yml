@@ -21,5 +21,8 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
+      - name: Install pytest plugin
+        run: pip install pytest-cov
+
       - name: Run test
-        run: pytest -v --capture=no
+        run: pytest -v --cov=src
