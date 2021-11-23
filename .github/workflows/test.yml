@@ -22,7 +22,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run test
-        run: pytest -v --cov=src --cov-report=html
+        run: |
+          pytest -v --cov=src --cov-report=html
+          # カバレッジレポートをコミットするため .gitignore を削除しておく
+          rm htmlcov/.gitignore
 
       - name: Coverage Deploy
         uses: peaceiris/actions-gh-pages@v3
