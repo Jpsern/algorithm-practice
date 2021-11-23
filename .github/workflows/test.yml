@@ -23,3 +23,9 @@ jobs:
 
       - name: Run test
         run: pytest -v --cov=src --cov-report=html
+
+      - name: Coverage Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./htmlcov
