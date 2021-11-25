@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - feat/addDeployCovWorkflow
   workflow_dispatch:
 
 jobs:
