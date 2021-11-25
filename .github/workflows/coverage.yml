@@ -1,11 +1,14 @@
-name: Test CI
+name: Coverage CI
 
 on:
   push:
+    branches:
+      - master
+      - feat/addDeployCovWorkflow
   workflow_dispatch:
 
 jobs:
-  test:
+  coverage-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,4 +26,11 @@ jobs:
 
       - name: Run test
         run: |
-          pytest -v --capture=no --cov=src
+          pytest --cov=src --cov-report=html
+          rm htmlcov/.gitignore
+
+      - name: Coverage Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./htmlcov
