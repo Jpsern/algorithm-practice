@@ -25,7 +25,7 @@ jobs:
 
       - name: Run test
         run: |
-          pytest -v --cov=src --cov-report=html
+          pytest --cov=src --cov-report=html
           rm htmlcov/.gitignore
 
       - name: Coverage Deploy
