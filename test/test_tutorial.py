@@ -26,3 +26,9 @@ class TestTutorial(unittest.TestCase):
             [2, 3, 5, 7, 11, 13, 17, 19],
             '素数だけが配列に格納される'
         )
+
+    def test_convert_to_binary_number(self):
+        self.assertEqual(Tutorial.convert_to_binary_number(18), 10010, '10進数を2進数に変換する')
+
+    def test_convert_to_decimal_number(self):
+        self.assertEqual(Tutorial.convert_to_decimal_number(10010), 18, '2進数を10進数に変換する')
