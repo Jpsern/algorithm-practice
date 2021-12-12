@@ -27,4 +27,4 @@ class Tutorial:
         while num > 0:
             result = str(num % 2) + result
             num = num // 2
-        return result
+        return int(result)
