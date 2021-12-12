@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Initialize
-        uses: .github/actions/initialize
+        uses: ./.github/actions/initialize
 
       - name: Run test
         run: |
