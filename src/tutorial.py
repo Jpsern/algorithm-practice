@@ -28,3 +28,11 @@ class Tutorial:
             result = str(num % 2) + result
             num //= 2
         return int(result)
+
+    @classmethod
+    def convert_to_decimal_number(cls, num: int):
+        result = 0
+        n = str(num)
+        for i in range(len(n)):
+            result += int(n[i]) * (2 ** (len(n) - i - 1))
+        return result
