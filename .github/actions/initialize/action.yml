@@ -3,18 +3,17 @@ description: Initialize develop env.
 runs:
   using: composite
   steps:
-    - name: test
-      run: echo 'hoge'
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+
+    - name: Print Python version
+      run: python --version
       shell: bash
-    # - name: Setup Python
-    #   uses: actions/setup-python@v2
-    #   with:
-    #     python-version: '3.9'
-    #     cache: 'pip'
 
-    # - name: Print Python version
-    #   run: python --version
-
-    # - name: Install dependencies
-    #   run: |
-    #     pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+      shell: bash
