@@ -26,5 +26,5 @@ class Tutorial:
         result = ''
         while num > 0:
             result = str(num % 2) + result
-            num = num // 2
+            num //= 2
         return int(result)
