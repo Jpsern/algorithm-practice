@@ -1,0 +1,19 @@
+name: Initialize
+description: Initialize develop env.
+runs:
+  using: composite
+  steps:
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+
+    - name: Print Python version
+      run: python --version
+      shell: bash
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+      shell: bash
