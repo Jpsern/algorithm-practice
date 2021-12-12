@@ -20,3 +20,11 @@ class Tutorial:
             if num % i == 0:
                 return False
         return True
+
+    @classmethod
+    def convert_to_binary_number(cls, num: int):
+        result = ''
+        while num > 0:
+            result = str(num % 2) + result
+            num = num // 2
+        return result
