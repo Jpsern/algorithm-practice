@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - feat/addDeployCovWorkflow
+      - feat/useCodecov
   workflow_dispatch:
 
 jobs:
@@ -18,13 +18,13 @@ jobs:
 
       - name: Run test
         run: |
-          pytest --cov=src --cov-report=html
-          rm htmlcov/.gitignore
+          pytest --cov=src --cov-report=xml
 
-      - name: Coverage Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: codecov/codecov-action@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./htmlcov
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ./coverage1.xml # optional
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
