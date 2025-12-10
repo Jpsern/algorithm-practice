@@ -4,4 +4,4 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-    command: ["pytest", "-q"]
+    command: ["pytest", "-vv"]
