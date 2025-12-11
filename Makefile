@@ -1,6 +1,6 @@
 COMPOSE = docker compose
 
-.PHONY: init up test down
+.PHONY: init up test down help
 .DEFAULT_GOAL := help
 
 # 初回セットアップまたは依存関係の更新時に実行
