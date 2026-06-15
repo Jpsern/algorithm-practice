@@ -30,3 +30,17 @@ class TestBinarySearch(unittest.TestCase):
             -1,
             '存在しない要素は-1を返す'
         )
+
+    def test_binary_search_duplicate_values(self):
+        self.assertEqual(
+            Tutorial.binary_search([1, 2, 2, 2, 3], 2),
+            2,
+            '重複要素があっても見つかる'
+        )
+
+    def test_binary_search_empty_array(self):
+        self.assertEqual(
+            Tutorial.binary_search([], 1),
+            -1,
+            '空配列では-1を返す'
+        )
