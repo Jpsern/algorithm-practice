@@ -34,8 +34,8 @@ class TestBinarySearch(unittest.TestCase):
     def test_binary_search_duplicate_values(self):
         self.assertEqual(
             Tutorial.binary_search([1, 2, 2, 2, 3], 2),
-            2,
-            '重複要素があっても見つかる'
+            1,
+            '重複要素は左端のindexを返す'
         )
 
     def test_binary_search_empty_array(self):
