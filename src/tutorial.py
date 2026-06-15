@@ -36,3 +36,19 @@ class Tutorial:
         for i in range(len(n)):
             result += int(n[i]) * (2 ** (len(n) - i - 1))
         return result
+
+    @classmethod
+    def binary_search(cls, values: list[int], target: int):
+        left = 0
+        right = len(values) - 1
+
+        while left <= right:
+            middle = (left + right) // 2
+            if values[middle] == target:
+                return middle
+            if values[middle] < target:
+                left = middle + 1
+            else:
+                right = middle - 1
+
+        return -1
